@@ -52,6 +52,7 @@ def readFile(filename, large, sqlContext=sqlContext):
 	# schema for graphframe edges.
 	edges = lines.map(lambda x: x.split(delim)).map(lambda x: (int(x[0]), int(x[1])))
 	e = sqlContext.createDataFrame(edges, ['src', 'dst'])
+	e = e.filter('src != dst')
 	
 	# Extract all endpoints from input file (hence flatmap) and create
 	# data frame containing all those node names in schema matching
