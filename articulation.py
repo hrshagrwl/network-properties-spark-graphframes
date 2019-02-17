@@ -74,7 +74,7 @@ print("Execution time: %s seconds" % (time.time() - init))
 print("Articulation points:")
 df.filter('articulation = 1').show(truncate=False)
 
-df.filter('articulation = 1').toPandas().to_csv('graphframe_false.csv')
+df.filter('articulation = 1').toPandas().to_csv('articulations_out.csv')
 
 print("---------------------------")
 
